@@ -11,7 +11,7 @@ gamma     = 2.5   ; %1.45;%2.2;%1.5; % weight to establish the direction of the 
 v_bar     = 0.5 ; % all the obstacles faster than v_bar are treated at the same time
 phi       = 10  ; %50;%5; %increase if the obstacle's dimensions increase! (potenzialmente è diverso per ogni ostacolo)
 psi       = .5;%.5  ; %0;
-ro        =  0*1  ;
+ro        =  1  ;
 rot_matrix = [rot_matrix(:,:,1,1), rot_matrix(:,:,1,2); rot_matrix(:,:,2,1),rot_matrix(:,:,2,2)];
 
 %% Define the orientation of the egg on the basis of the waypoints

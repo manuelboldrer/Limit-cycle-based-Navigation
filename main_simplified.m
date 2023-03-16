@@ -1,3 +1,18 @@
+%/*-----------------------------------------------------
+%|      Manuel Boldrer, PhD                            |
+%|      Department of Cognitive Robotics               |
+%|      Delft University of Technology                 |
+%|                                                     |
+%|      email: m.boldrer@tudelft.nl                    |
+%|      https://manuelboldrer.github.io/               |                                                   
+%-----------------------------------------------------*/
+%The algorithms implemented in this code were used to generate
+%part of the simulation results in the following paper:
+
+%[1] Boldrer, M., Andreetto, M., Divan, S., Palopoli, L., & Fontanelli, D. (2020).
+% Socially-aware reactive obstacle avoidance strategy based on limit cycle. 
+% IEEE Robotics and Automation Letters, 5(2), 3251-3258.
+
 %% Clear console and variables
 clc;
 clear all; %#ok<CLALL>
@@ -28,8 +43,8 @@ egg.b       =  egg.epsilon * egg.a ;
 egg.alpha   =  0.5   ;
 egg.trasl   =  egg.a*0.75 ;
 %% *****Flags waypoints and initial conditions
-manual_wp    = 0 ;
-manual_ics   = 0 ;
+manual_wp    = 1 ;
+manual_ics   = 1 ;
 %% Choose the way to assign wp
 wp_method = 4 ;
 % 0 = pass the wp
@@ -42,7 +57,7 @@ center_algo_flag = 2;
 % if 1, basic mean
 % if 2, mewtropolis mean
 %% Video flag
-video_flag = 0;
+video_flag = 1;
 %**************************************************************************
 %% Store simulation data
 %**************************************************************************
@@ -460,10 +475,10 @@ for kk = 1:1:Tend %length(time-1)-1
 end
 %% Create a file .avi of simulation results
 if video_flag == 1
-    video = VideoWriter('simulazione1.avi','Motion JPEG AVI');
-    video.Quality = 80;
+    video = VideoWriter('LC2.avi','Motion JPEG AVI');
+    video.Quality = 100;
     video.FrameRate = 1/dt;
     open(video)
-    writeVideo(video,F(1:224))
+    writeVideo(video,F(1:164))
     close(video)
 end

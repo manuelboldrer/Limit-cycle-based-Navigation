@@ -11,7 +11,7 @@ gamma     = 2.5;%1.45;%2.2;%1.5; % weight to establish the direction of the cycl
 v_bar     = 0.5; % all the obstacles faster than v_bar are treated at the same time
 phi       = 10;%50;%5; %increase if the obstacle's dimensions increase! (potenzialmente è diverso per ogni ostacolo)
 psi       = .5;%0;
-ro        = 0*1;
+ro        = 1;
 %% Define the orientation of the egg on the basis of the waypoints
 % get the wp path
 [~, ~, wp_path,~,~] = generate_wp_path(waypoints, x_obstacle, y_obstacle, 1,0);
